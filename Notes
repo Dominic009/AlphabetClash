@@ -1,0 +1,42 @@
+First task is :
+# Make the "Play game" button take the player to the next screen.
+                        (Using "onclick"/"callback function")
+
+Work process - To make the home screen dissapear and the game screen appear, we need to add a "hidden" class on home screen and at the same time need to remove "hidden" class from game screen to make it appear as soon as we click on the button.
+
+step 1 - Make a call back global function which will "add" a class on the target elements classList 
+step 2 - Make a call back global function which will "remove" a class on the target elements classList 
+step 3 -call the function on the button.
+
+(DONE)
+
+
+
+
+
+
+
+
+Second task is :
+# Generate random ALPHABETS on the screen
+
+Work process - Need to take an string of alphabets and split('') them to make them an array. Then making a process that generates a random number and make them both sync by passing the index. Then display it on the playing screen.
+
+
+step 1 - Need to take an string of alphabets and split('') them to make them an array.
+step 2 - Make a functin for generating random number
+step 3 - Pass the random number to the alphabet array
+step 4 - Display the result on the gaming screen.
+(DONE)
+
+
+
+
+
+
+
+Third task is :
+# Take player keyboard input into the console
+
+Work process - Output the input that the player clicks on their keyboard in the console and if player input is equal to displayed input then keep playing the game or else stop the game.
+(DONE)
