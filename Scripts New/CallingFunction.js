@@ -16,14 +16,6 @@ playerInput()
 addClass('game-screen', 'hidden');
 removeClass('end-screen', 'hidden');
 
-
-
-
-
-/*------------------------------------- Task 5  -------------------------------------*/
-
-
-
 }
 
 /*------------------------------------- Task 4  -------------------------------------*/
@@ -35,4 +27,8 @@ setDisplayText('life-point', 3);
      removeClass('game-screen', 'hidden');
     }
 
-    
+function gameOver(){
+    playerInput();
+    const what = document.getElementById('player-score').innerText;
+    console.log(what);
+}

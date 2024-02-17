@@ -50,26 +50,24 @@ function keyColor(elementId){
 
 
 // Recognizing player input with a function and passing the "event" with "addEventListener"
+setDisplayText('player-score', 0);
 function playerInput(event){
     const input = event.key;
 
     const displayAlphabet = document.getElementById('display-screen').innerText;
 
-
     if(input === displayAlphabet){
 
         const score = document.getElementById('player-score');
-        console.log(score)
         const text = score.innerText;
         const currentScore = parseInt(text);
-
       
         const totalScore = currentScore + 1;
         score.innerText = totalScore;
-
-
+        
         removeClass(displayAlphabet, "bg-orange-400");
         componentSet();  // if matched, repeating the process with this function
+
     }
     else{ 
         const currentLife = document.getElementById('life-point');
@@ -78,21 +76,18 @@ function playerInput(event){
         
         let playerRemainingLife = convertStringToNum - 1;
         currentLife.innerText = playerRemainingLife;
-   
+        
         
         if(playerRemainingLife === 0){
         setDisplayText('player-score', 0);
         setDisplayText('life-point', 3);
         addClass('game-screen', 'hidden');
         removeClass('end-screen', 'hidden');
-
-        // const lastScore = document.getElementById('player-score').innerText;
-        
-        // setDisplayText('result', lastScore)
+        removeClass(displayAlphabet, "bg-orange-400");
     }
-
+    
 }
-    removeClass(displayAlphabet, 'bg-orange-400');
+  
 }
 document.addEventListener('keyup', playerInput);
 
