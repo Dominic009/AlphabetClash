@@ -85,9 +85,9 @@ function playerInput(event){
         
         
         if(playerRemainingLife === 0){
-        setDisplayText('player-score', 0);
         gameOver();
         removeClass(displayAlphabet, "bg-orange-400");
+        setDisplayText('player-score', 0);
     }
     
 }
