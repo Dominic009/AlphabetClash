@@ -40,3 +40,28 @@ Third task is :
 
 Work process - Output the input that the player clicks on their keyboard in the console and if player input is equal to displayed input then keep playing the game or else stop the game.
 (DONE)
+
+
+
+
+
+
+Fourth task is :
+# Make the play again button bring back the player in the gaming screen
+
+Work process - Make a "onclick" function to the "Play again" button to bring the player in the game screen and continue with all the functionality.
+(Done)
+
+
+
+
+Fifth task is :
+# Display "player life" remaining
+
+Work process - Player will have a default amount of life and it will be keep going down everytime player makes a wrong move.
+Untill it hits "0", player will keep playing and after that game will be over and player can play again. Reset the life amounts for a new game.
+
+step 1 - Set a default life amount for the player and display it on the screen
+step 2 - Everytime player makes a wrong move, deduct life amount by 1 point
+step 3 - If life amount hits "0", game will be over
+step 4 - If player enters the game again, reset the life amount again

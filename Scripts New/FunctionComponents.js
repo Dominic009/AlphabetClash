@@ -37,19 +37,71 @@ element.innerText = randomAlphabet;
 }
 
 
+
+// Adding key bg color
+function keyColor(elementId){
+    const randomAlphabet = generateRandomAlphabet();
+    const element = document.getElementById(elementId);
+    element.innerText = randomAlphabet;
+    addClass(randomAlphabet, 'bg-orange-400');
+}
+
+
+
+
 // Recognizing player input with a function and passing the "event" with "addEventListener"
 function playerInput(event){
     const input = event.key;
-    console.log(input);
 
     const displayAlphabet = document.getElementById('display-screen').innerText;
-    console.log(displayAlphabet);
+
 
     if(input === displayAlphabet){
+
+        const score = document.getElementById('player-score');
+        console.log(score)
+        const text = score.innerText;
+        const currentScore = parseInt(text);
+
+      
+        const totalScore = currentScore + 1;
+        score.innerText = totalScore;
+
+
+        removeClass(displayAlphabet, "bg-orange-400");
         componentSet();  // if matched, repeating the process with this function
-    }else{
+    }
+    else{ 
+        const currentLife = document.getElementById('life-point');
+        const innerText = currentLife.innerText;
+        const convertStringToNum = parseInt(innerText);
+        
+        let playerRemainingLife = convertStringToNum - 1;
+        currentLife.innerText = playerRemainingLife;
+   
+        
+        if(playerRemainingLife === 0){
+        setDisplayText('player-score', 0);
+        setDisplayText('life-point', 3);
         addClass('game-screen', 'hidden');
         removeClass('end-screen', 'hidden');
+
+        // const lastScore = document.getElementById('player-score').innerText;
+        
+        // setDisplayText('result', lastScore)
     }
+
+}
+    removeClass(displayAlphabet, 'bg-orange-400');
 }
 document.addEventListener('keyup', playerInput);
+
+
+
+
+// Setting the life point with function instead of hard code
+function setDisplayText(elementId, value){
+    const element = document.getElementById(elementId);
+    element.innerText = value;
+}
+
