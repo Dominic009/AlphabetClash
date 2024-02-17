@@ -49,13 +49,15 @@ function keyColor(elementId){
 
 
 
+
 // Recognizing player input with a function and passing the "event" with "addEventListener"
-setDisplayText('player-score', 0);
 function playerInput(event){
     const input = event.key;
+    console.log("Player pressed", input)
 
     const displayAlphabet = document.getElementById('display-screen').innerText;
 
+    
     if(input === displayAlphabet){
 
         const score = document.getElementById('player-score');
@@ -68,6 +70,10 @@ function playerInput(event){
         removeClass(displayAlphabet, "bg-orange-400");
         componentSet();  // if matched, repeating the process with this function
 
+    }else if(input === 'Escape'){
+        gameOver();
+        setDisplayText('player-score', 0);
+        removeClass(displayAlphabet, "bg-orange-400"); 
     }
     else{ 
         const currentLife = document.getElementById('life-point');
@@ -80,9 +86,7 @@ function playerInput(event){
         
         if(playerRemainingLife === 0){
         setDisplayText('player-score', 0);
-        setDisplayText('life-point', 3);
-        addClass('game-screen', 'hidden');
-        removeClass('end-screen', 'hidden');
+        gameOver();
         removeClass(displayAlphabet, "bg-orange-400");
     }
     
@@ -100,3 +104,14 @@ function setDisplayText(elementId, value){
     element.innerText = value;
 }
 
+
+
+function gameOver(){
+    setDisplayText('life-point', 3);
+    addClass('game-screen', 'hidden');
+    removeClass('end-screen', 'hidden');
+
+    // Displaying the final score on the final screen
+    const playerScore = document.getElementById('player-score').innerText;
+    setDisplayText('result', playerScore);
+}

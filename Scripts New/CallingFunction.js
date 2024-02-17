@@ -6,20 +6,21 @@ function componentSet(){
 addClass('home-page', 'hidden');                      // Calling the function with the id of the element that i want to add the class to.
 removeClass('game-screen', 'hidden');
 /*------------------------------------- Task 2  -------------------------------------*/
-generateRandomAlphabet();
+generateRandomAlphabet(); 
 displayElement('display-screen');
 
 keyColor('display-screen');
 /*------------------------------------- Task 3  -------------------------------------*/
-playerInput()
-
+playerInput();
 addClass('game-screen', 'hidden');
 removeClass('end-screen', 'hidden');
 
 }
+setDisplayText('player-score', 0);
 
 /*------------------------------------- Task 4  -------------------------------------*/
 setDisplayText('life-point', 3);
+
 
  function playAgain(){
      keyColor('display-screen')
@@ -27,8 +28,12 @@ setDisplayText('life-point', 3);
      removeClass('game-screen', 'hidden');
     }
 
-function gameOver(){
-    playerInput();
-    const what = document.getElementById('player-score').innerText;
-    console.log(what);
-}
+/** */
+// function continueGame(){
+//     const randomAlphabet = generateRandomAlphabet();
+//     console.log(randomAlphabet);
+//     const curentAlphabet = document.getElementById('display-screen');
+//     curentAlphabet.innerText = randomAlphabet;
+//     displayElement('display-screen');
+//     keyColor('display-screen');
+// }
